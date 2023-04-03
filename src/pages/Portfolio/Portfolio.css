@@ -1,0 +1,401 @@
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 0 16rem;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+}
+
+.portfolio-title-wrapper {
+  margin: 0 0 6rem 0;
+}
+
+.portfolio-title-line {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #444649;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.portfolio-line {
+  width: 70px;
+  height: 4px;
+  background-color: #444649;
+}
+
+.portfolio-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project-img {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  max-width: 600px;
+  transition: visibility 0s 0.5s, opacity 2s linear;
+}
+
+.project-img:hover img {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.project-img:hover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.overlay {
+  display: none;
+  text-align: center;
+  color: #4d4a47;
+}
+
+.project-title {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3rem;
+}
+
+.project-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #0e7490;
+}
+
+.project-btn {
+  font-size: 1.2rem;
+  padding: 0 1.5rem;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #0e7490;
+}
+
+.project-btn:hover {
+  background-color: #0e7490;
+  color: #fff;
+}
+
+.slide-effect {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideDown,
+.slideUp {
+  position: relative;
+}
+
+.slideDown {
+  top: -60px;
+  animation: slideDown40 0.2s forwards;
+}
+
+.slideUp {
+  top: 60px;
+  color: #0e7490;
+  animation: slideUp40 0.2s forwards;
+}
+
+.modal-title-wrapper {
+  margin: 2rem 2rem 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+  border-color: #c0c0c0;
+}
+
+.modal-project-title {
+  font-size: 22pt;
+  font-weight: 700;
+  color: #444;
+}
+
+.modal-project-subtitle {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #c0c0c0;
+}
+
+.modal-project-desc {
+  margin: 1rem 2rem 2rem;
+  font-size: 11pt;
+}
+
+.modal-site-btn {
+  background-color: #003366;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fdf4ff;
+  border-color: #fdf4ff;
+  border-width: 2px;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 1.5s ease;
+}
+
+.modal-site-btn a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-site-btn:hover {
+  background-image: linear-gradient(to right, #86198f 0%, #0e7490 70%);
+  box-shadow: 0 0 6px #fdf4ff;
+  background-position: 0 0;
+}
+
+.modal-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.modal-close-btn {
+  font-size: 14pt;
+  font-weight: 700;
+  color: #c0c0c0;
+}
+
+.carousel {
+  position: relative;
+  padding-top: 60%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+}
+
+.carousel-viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: hidden;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  counter-increment: item;
+}
+
+.carousel-slide:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -40%, 70px);
+  color: #fff;
+  font-size: 2em;
+}
+
+.carousel:hover,
+.carousel:focus-within {
+  animation-name: none;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel-prev {
+  left: -1rem;
+}
+
+.carousel::after,
+.carousel-next {
+  right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: "";
+  z-index: 1;
+  background-color: #333;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+@keyframes slideUp60 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp40 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown20 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown40 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(40px);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .slide-effect,
+  .slideDown,
+  .slideUp {
+    font-size: 1rem;
+  }
+  .slideUp {
+    top: 0px;
+    animation: slideUp60 0.2s forwards;
+  }
+
+  .slideDown {
+    top: -50px;
+    animation: slideDown20 0.2s forwards;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .project-title {
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+  }
+  .project-desc {
+    font-size: 0.75rem;
+  }
+  .project-btn {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .portfolio-container {
+    padding: 3rem 1rem;
+  }
+
+  .portfolio-title-wrapper {
+    margin: 0 0 3rem 0;
+  }
+}

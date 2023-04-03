@@ -1,0 +1,109 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 1rem 2rem;
+  margin: 0 auto;
+  background-color: #1e293b;
+}
+
+.contact-title-wrapper {
+  margin: 0 0 6rem 0;
+}
+
+.contact-title-line {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.contact-line {
+  width: 70px;
+  height: 4px;
+  background-color: #e2e8f0;
+}
+
+.contact-container h2 {
+  display: flex;
+  justify-content: center;
+  color: #04c2c9;
+  font-weight: 500;
+  margin: 0 0 3rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grow {
+  animation: grow 2s ease;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.contact-form {
+  max-width: 40rem;
+}
+
+.contact-form input,
+textarea {
+  font-family: "Rajdhani";
+  font-size: 1.25rem;
+  width: 100%;
+  border-radius: 10px;
+  margin: 2px 0;
+  padding: 1rem;
+  background-color: #191919;
+  color: #fff;
+}
+
+.contact-form input {
+  height: 3rem;
+}
+
+.contact-form textarea {
+  height: 10rem;
+}
+
+.form-btn {
+  border: 2px solid;
+  border-color: #fff;
+  border-radius: 10px;
+  padding: 6px 30px;
+  color: #fff;
+  font-weight: 500;
+  float: right;
+}
+
+.form-btn:hover {
+  background-color: #04c2c9;
+  border-color: #04c2c9;
+  color: #fff;
+  transition: ease-in 0.3s;
+}
+
+@media screen and (max-width: 400px) {
+  .contact-container {
+    padding: 3rem 1rem;
+  }
+
+  .contact-title-wrapper {
+    margin: 0 0 3rem 0;
+  }
+}

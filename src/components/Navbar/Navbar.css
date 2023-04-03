@@ -1,0 +1,97 @@
+.nav {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  height: 4rem;
+  background: linear-gradient(-45deg, #191919 0%, #003366 100%);
+  z-index: 1;
+}
+
+.nav-links {
+  display: flex;
+  font-size: 1rem;
+  gap: 4rem;
+  color: rgb(229 231 235);
+  font-weight: 600;
+}
+
+.nav-links li:hover {
+  color: #7dd3fc;
+  transition: 0.5s ease;
+  border-bottom: 1px solid;
+  border-color: #7dd3fc;
+}
+
+.nav-smallscreen {
+  display: none;
+}
+
+.nav-smallscreen .overlay__open {
+  cursor: pointer;
+}
+
+.nav-smallscreen-overlay {
+  padding-top: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0f172a;
+  transition: 0.5s ease;
+
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.nav-smallscreen-overlay .overlay__close {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.nav-smallscreen-links li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 2rem;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+
+.nav-smallscreen-links li:hover {
+  color: #7dd3fc;
+  transition: 0.5s ease;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 950px) {
+  .nav {
+    height: 4rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-smallscreen {
+    display: flex;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .nav {
+    padding: 1rem 16rem;
+  }
+}
